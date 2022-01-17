@@ -1,0 +1,38 @@
+.headingSec {
+  position: relative;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--background);
+  color: var(--color);
+}
+.headingText {
+  font-weight: 400;
+}
+.themeChanger {
+  position: absolute;
+  width: 44px;
+  background: #ccc;
+  top: 10px;
+  right: 10px;
+  height: 20px;
+  border-radius: 10px;
+}
+.themeChanger::before {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  content: '';
+  background: #222;
+  border-radius: 50%;
+  left: 0;
+  transition: all ease-in-out 0.25s;
+}
+span.active::before {
+  left: calc(100% - 20px);
+}

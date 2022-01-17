@@ -1,0 +1,42 @@
+.todayWeatherSec {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--background);
+  color: var(--color);
+}
+.areaRow {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.area {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.currentDate {
+  font-size: 12px;
+}
+.temprature {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.temp_icons {
+  display: flex;
+  align-items: center;
+}
+.temp {
+  font-size: 62px;
+  font-weight: 500;
+}
+.temp_summery {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}

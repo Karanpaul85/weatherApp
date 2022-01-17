@@ -9,7 +9,6 @@ const Home = ({ current, daily, hourly }) => {
     lang: '',
   };
   const [coords, setCoords] = useState(initialState);
-
   useEffect(() => {
     const successHandler = (position) =>
       setCoords({

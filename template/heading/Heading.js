@@ -1,35 +1,34 @@
-import { useState } from 'react';
+import Cookies from 'js-cookie';
 import styles from './Heading.module.css';
-import { useEffect } from 'react';
-const Heading = () => {
+import { useEffect, useState } from 'react';
+const Heading = ({ theme }) => {
+  const [themeType, setThemeType] = useState('');
   useEffect(() => {
-    // Perform localStorage action
-    const themeSet = localStorage.getItem('dataTheme');
-    themeSet === 'dark-theme' ? setstate('dark-theme') : setstate('');
-  }, []);
-  const [state, setstate] = useState('');
-  if (state === 'dark-theme') {
-    document.documentElement.setAttribute('data-theme', 'dark-theme');
-  }
+    if (theme === 'dark-theme') {
+      setThemeType(theme);
+      document.documentElement.setAttribute('data-theme', 'dark-theme');
+    }
+  }, [theme]);
   const themeHandler = () => {
-    if (state === 'dark-theme') {
-      setstate('');
-      localStorage.setItem('dataTheme', '');
-      document.documentElement.setAttribute('data-theme', '');
+    if (themeType === 'dark-theme') {
+      Cookies.set('dataTheme', 'light-theme');
+      setThemeType('light-theme');
+      document.documentElement.setAttribute('data-theme', 'light-theme');
     } else {
-      setstate('dark-theme');
-      localStorage.setItem('dataTheme', 'dark-theme');
+      Cookies.set('dataTheme', 'dark-theme');
+      setThemeType('dark-theme', '');
       document.documentElement.setAttribute('data-theme', 'dark-theme');
     }
   };
   return (
     <div className={styles.headingSec}>
       <span
-        className={`${styles.themeChanger} ${state ? styles.active : ''}`}
+        className={styles.themeChanger}
         onClick={() => themeHandler()}
       ></span>
       <h1 className={styles.headingText}>Weather</h1>
     </div>
   );
 };
+
 export default Heading;

@@ -30,9 +30,6 @@
   content: '';
   background: #222;
   border-radius: 50%;
-  left: 0;
+  left: var(--left);
   transition: all ease-in-out 0.25s;
-}
-span.active::before {
-  left: calc(100% - 20px);
 }

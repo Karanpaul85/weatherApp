@@ -2,7 +2,8 @@ import Layout from '../template/Layout';
 import Heading from '../template/heading/Heading';
 import Today from '../template/today/Today';
 import Forcast from '../template/forcast/Forcast';
-const Home = ({ current, daily, hourly, theme, cityName }) => {
+const Home = ({ current, daily, hourly, theme, cityName, apiData }) => {
+  console.log(apiData);
   return (
     <Layout title="Current Temprature">
       <Heading theme={theme} />
@@ -26,6 +27,7 @@ export async function getServerSideProps(ctx) {
       `https://api.openweathermap.org/data/2.5/weather?lat=${apiData.latitude}&lon=${apiData.longitude}&units=metric&exclude=alerts,minutely&appid=3279b275644f5e71cba5375e72028012`
     );
     let cityNamedata = await cityName.json();
+    finalData['apiData'] = apiData;
     finalData['cityName'] = cityNamedata.name;
     finalData['theme'] = req.cookies.dataTheme
       ? req.cookies.dataTheme

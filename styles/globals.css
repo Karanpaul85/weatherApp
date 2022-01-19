@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 :root {
-  --background: rgba(255, 255, 255, 0.95);
-  --color: #222;
-  --box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
-  --left: 0;
-}
-[data-theme='dark-theme'] {
   --background: rgba(0, 0, 0, 0.8);
   --color: #fff;
   --box-shadow: 0 2px 4px rgb(255 255 255 / 50%);
   --left: calc(100% - 20px);
+}
+[data-theme='dark-theme'] {
+  --background: rgba(255, 255, 255, 0.95);
+  --color: #222;
+  --box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+  --left: 0;
 }
 html,
 body {

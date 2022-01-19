@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import styles from './Today.module.css';
 import weatherIcon from '../icons/icon';
-const Today = ({ current, today }) => {
+const Today = ({ current, today, cityName }) => {
   const finalIcon = `/svg/${weatherIcon(today.weather[0].id)}.svg`;
   const currentDate = new Date(current.dt * 1000);
   return (
     <div className={styles.todayWeatherSec}>
       <div className={styles.areaRow}>
-        <div className={styles.area}>Sultanpur</div>
+        <div className={styles.area}>{cityName}</div>
         <div className={styles.currentDate}>
           {currentDate.toLocaleString('en-us', { weekday: 'short' })},{' '}
           {currentDate.getDate()}

@@ -35,8 +35,43 @@
   font-size: 62px;
   font-weight: 500;
 }
+.temp sup {
+  font-size: 2rem;
+}
 .temp_summery {
   display: flex;
   flex-direction: column;
   text-align: right;
+}
+.hourly {
+  display: flex;
+  width: 100%;
+  overflow: auto;
+}
+.hourlyTempSec {
+  padding: 15px;
+  width: 30%;
+  flex: none;
+  background: var(--background);
+  color: var(--color);
+  margin-right: 15px;
+  border-radius: 8px;
+  min-width: 130px;
+}
+.hourlyTempWithIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hourlyTemp {
+  font-size: 1.5rem;
+}
+.hourlyTemp sup {
+  font-size: 0.8rem;
+}
+.hourlyTime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }

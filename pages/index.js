@@ -55,7 +55,12 @@ const Home = ({ current, daily, hourly, theme, cityName, latlangs }) => {
   ) : (
     <Layout title={`${cityName} - ${Math.ceil(current.temp)}C`}>
       <Heading theme={theme} />
-      <Today current={current} today={daily[0]} cityName={cityName} />
+      <Today
+        current={current}
+        today={daily[0]}
+        cityName={cityName}
+        hourly={hourly}
+      />
       <Forcast daily={daily} />
     </Layout>
   );

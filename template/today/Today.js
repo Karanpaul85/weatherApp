@@ -10,7 +10,6 @@ const Today = ({ current, today, cityName, hourly }) => {
     var finalTime = hours + ':' + minutes + ' ' + AmOrPm;
     return finalTime;
   };
-  console.log(hourly);
   const d = new Date();
   const curretDate = d.getDate();
   const finalIcon = `/svg/${weatherIcon(today.weather[0].id)}.svg`;
